@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "biprob_description")
+set(biprob_description_MAINTAINER "paulo <paulo@todo.todo>")
+set(biprob_description_DEPRECATED "")
+set(biprob_description_VERSION "0.0.0")
+set(biprob_description_BUILD_DEPENDS )
+set(biprob_description_RUN_DEPENDS )
+set(biprob_description_BUILDTOOL_DEPENDS "catkin")

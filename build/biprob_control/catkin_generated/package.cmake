@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "biprob_control")
+set(biprob_control_MAINTAINER "Paulo Filho <paulo.ecomp@gmail.com>")
+set(biprob_control_DEPRECATED "")
+set(biprob_control_VERSION "1.0.0")
+set(biprob_control_BUILD_DEPENDS )
+set(biprob_control_RUN_DEPENDS "biprob_description")
+set(biprob_control_BUILDTOOL_DEPENDS "catkin")

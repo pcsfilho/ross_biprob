@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<robot>     
+  <!--Configuração de plugins e cores para o Gazebo-->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/biprob</robotNamespace>
+    </plugin>
+  </gazebo>
+  <gazebo reference="pelvis">    
+    <material>Gazebo/Grey</material>    
+  </gazebo>
+  <gazebo reference="front_hip_l">   
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="sagittal_hip_l">   
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="thigh_l">     
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="knee_l">    
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="tibia_l">      
+    <material>Gazebo/Orange</material>      
+  </gazebo>
+  <gazebo reference="sagittal_ankle_l">      
+    <material>Gazebo/Grey</material>      
+  </gazebo>
+  <gazebo reference="front_ankle_l">      
+    <material>Gazebo/Grey</material>
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>    
+  </gazebo>
+  <gazebo reference="front_hip_r">      
+    <material>Gazebo/Blue</material>      
+  </gazebo>
+  <gazebo reference="sagittal_hip_r">   
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="thigh_r">    
+    <material>Gazebo/Orange</material>    
+  </gazebo>
+  <gazebo reference="knee_r">    
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="tibia_r">    
+    <material>Gazebo/Orange</material>    
+  </gazebo>
+  <gazebo reference="sagittal_ankle_r">    
+    <material>Gazebo/Grey</material>    
+  </gazebo>
+  <gazebo reference="front_ankle_r">    
+    <material>Gazebo/Grey</material>
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>    
+  </gazebo>
+  <gazebo>
+    <plugin filename="libhector_gazebo_ros_imu.so" name="gazebo_ros_imu">
+    <bodyName>pelvis</bodyName>
+    <updateRate>50</updateRate>
+    <serviceName>/biprob/imu_service</serviceName>
+    <topicName>/biprob/imu</topicName>
+    <gaussianNoise>0</gaussianNoise>
+    <xyzOffset>0 0 0</xyzOffset>
+    <rpyOffset>0 0 -0.703220730592</rpyOffset>
+    </plugin>     
+  </gazebo> 
+</robot>

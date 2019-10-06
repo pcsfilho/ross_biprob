@@ -1,0 +1,8 @@
+prefix=/home/paulo/ros_biprob/devel
+
+Name: biprob_description
+Description: Description of biprob_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/paulo/ros_biprob/devel/lib 
+Requires: 

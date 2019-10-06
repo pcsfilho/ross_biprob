@@ -1,0 +1,672 @@
+<?xml version="1.0" ?>
+<robot name="biprob">
+  <!--Links-->
+  <!--link raiz do bipede-->
+  <link name="base_link"/> 
+  <!--link Pelvis--> 
+  <link name="pelvis">
+    <inertial>      
+      <mass value="0.97559947"/>
+      <inertia ixx="3.1081800"  ixy="-0.25460189"  ixz="2.0318174" iyy="6.3787776" iyz="0.16417863" izz="5.3316425" />
+    </inertial>
+    <visual>      
+      <geometry>
+        <box size="0.053125 0.109 0.05" /> 
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.053125 0.109 0.05" /> 
+      </geometry>
+    </collision>
+  </link>
+  <!--link quadril frontal esquerdo--> 
+  <link name="front_hip_l" >
+    <inertial>
+      <origin xyz="0.000079 0.018242 0.013873" />
+      <mass value="0.11904336"/>
+      <inertia ixx="0.097950272"  ixy="0.0012119368"  ixz="-0.00021223016" iyx="0.00122119368" iyy="0.032848287" iyz="-0.0019474021" izx="-0.00021223016" izy="-0.0019474021" izz="0.11493509" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+            <sphere radius="0.015"/>
+       </geometry>
+       <material name="blue">
+            <color rgba="0 0 1 1"/>
+       </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link quadril sagital esquerdo-->
+  <link name="sagittal_hip_l">
+    <inertial>
+      <mass value="0.0062114"/> 
+      <inertia ixx="0.000000559"  ixy="0"  ixz="0" iyy="0.000000559" iyz="0" izz="0.000000559" />  
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.015"/>
+          </geometry>
+    </collision>
+  </link>
+  <!--link femur esquerdo-->
+  <link name="thigh_l" >
+    <inertial>
+      <origin xyz="-0.062965 -0.000323 0.000692" />
+      <mass value="0.11904336"/>
+      <inertia ixx="0.097950272"  ixy="0.0012119368"  ixz="-0.00021223016" iyx="0.00122119368" iyy="0.032848287" iyz="-0.0019474021" izx="-0.00021223016" izy="-0.0019474021" izz="0.11493509" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.093 0.02 0.01"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link joelho esquerdo-->
+  <link name="knee_l">
+    <visual>
+      <geometry>
+        <cylinder length="0.013" radius="0.005"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 1.57075"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.013" radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.00007289986"/>
+      <inertia ixx="9.1e-010"  ixy="0"  ixz="0" iyy="9.1e-010" iyz="0" izz="1.4e-010"/>
+    </inertial>
+  </link>
+  <!--link tibia esquerdo-->
+  <link name="tibia_l" >
+    <inertial>
+      <origin xyz="-0.053955 0.006548 -0.000592" />
+      <mass value="0.070309794"/>
+      <inertia ixx="0.093369608"  ixy="-0.00093567395"  ixz="-0.00023992085" iyx="-0.00093567395" iyy="0.046295534" iyz="-0.012858493" izx="-0.00023992085" izy="-0.012858493" izz="0.11351516" />
+    </inertial>
+     <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.093 0.02 0.01"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link tornozelo esquerdo-->
+  <link name="sagittal_ankle_l" >
+    <inertial>
+      <origin xyz="-0.000214 -0.018536 0.013873" />
+      <mass value="0.16710792"/>
+      <inertia ixx="0.12079175"  ixy="-0.00079781067"  ixz="-0.00039322246" iyx="-0.00079781067" iyy="0.10885465" iyz="0.0070770117" izx="-0.00039322246" izy="0.0070770117" izz="0.041871103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+            <sphere radius="0.01"/>
+       </geometry>
+       <material name="blue">
+            <color rgba="0 0 1 1"/>
+       </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link tornozelo esquerdo-->
+  <link name="front_ankle_l" >
+    <inertial>
+      <origin xyz="-0.025995 -0.009506 -0.000503" />
+      <mass value="0.0794462"/>
+      <inertia ixx="0.12079175"  ixy="-0.00079781067"  ixz="-0.00039322246" iyx="-0.00079781067" iyy="0.10885465" iyz="0.0070770117" izx="-0.00039322246" izy="0.0070770117" izz="0.041871103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+            <sphere radius="0.01"/>
+       </geometry>
+       <material name="blue">
+            <color rgba="0 0 1 1"/>
+       </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link> 
+  <!--link pe esquerdo-->
+  <link name="foot_l" >
+    <inertial>
+      <origin xyz="-0.000214 -0.018536 0.013873" />
+      <mass value="0.16710792"/>
+      <inertia ixx="0.12079175"  ixy="-0.00079781067"  ixz="-0.00039322246" iyx="-0.00079781067" iyy="0.10885465" iyz="0.0070770117" izx="-0.00039322246" izy="0.0070770117" izz="0.041871103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.045 0.08175"/>          
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.045 0.08175"/>  
+      </geometry>
+    </collision>
+  </link> 
+  <!--link quadril frontal direito-->
+  <link name="front_hip_r" >
+    <inertial>
+      <origin xyz="0.000079 -0.018242 0.0138735" />
+      <mass value="0.11904336"/>
+      <inertia ixx="0.097950272"  ixy="0.0012119368"  ixz="-0.00021223016" iyx="0.00122119368" iyy="0.032848287" iyz="-0.0019474021" izx="-0.00021223016" izy="-0.0019474021" izz="0.11493509" />
+    </inertial>
+   <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+          <sphere radius="0.015"/>
+       </geometry>
+       <material name="blue">
+          <color rgba="0 0 1 1"/>
+       </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link quadril sagital direito-->
+  <link name="sagittal_hip_r" >
+    <inertial>
+      <mass value="0.0062114"/> 
+      <inertia ixx="0.000000559"  ixy="0"  ixz="0" iyy="0.000000559" iyz="0" izz="0.000000559" />  
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+      <collision>
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+      </collision>
+  </link>
+  <!--link femur direito-->
+  <link name="thigh_r" >
+    <inertial>
+      <origin xyz="0.062965 -0.000323 0.000692" />
+      <mass value="0.11904336"/>
+      <inertia ixx="0.097950272"  ixy="0.0012119368"  ixz="-0.00021223016" iyx="0.00122119368" iyy="0.032848287" iyz="-0.0019474021" izx="-0.00021223016" izy="-0.0019474021" izz="0.11493509" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.093 0.02 0.01"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link joelho direito-->
+  <link name="knee_r">
+    <visual>
+      <geometry>
+        <cylinder length="0.013" radius="0.005"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 1.57075"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.013" radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.00007289986"/>
+      <inertia ixx="9.1e-010"  ixy="0"  ixz="0" iyy="9.1e-010" iyz="0" izz="1.4e-010"/>
+    </inertial>
+  </link>
+  <!--link tibia direita-->
+  <link name="tibia_r" >
+    <inertial>
+      <origin xyz="0.053955 0.006548 -0.000592" />
+      <mass value="0.070309794"/>
+      <inertia ixx="0.093369608"  ixy="-0.00093567395"  ixz="-0.00023992085" iyx="-0.00093567395" iyy="0.046295534" iyz="-0.012858493" izx="-0.00023992085" izy="-0.012858493" izz="0.11351516" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.093 0.02 0.01"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.093 0.035 0.045"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link tornozelo sagital direito-->
+  <link name="sagittal_ankle_r" >
+    <inertial>
+      <origin xyz="-0.000214 -0.018536 -0.013873" />
+      <mass value="0.16710792"/>
+      <inertia ixx="0.12079175"  ixy="-0.00079781067"  ixz="-0.00039322246" iyx="-0.00079781067" iyy="0.10885465" iyz="0.0070770117" izx="-0.00039322246" izy="0.0070770117" izz="0.041871103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+            <sphere radius="0.01"/>
+       </geometry>
+       <material name="blue">
+            <color rgba="0 0 1 1"/>
+       </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link tornozelo frontal direito-->
+  <link name="front_ankle_r" >
+    <inertial>
+      <origin xyz="0.025995 -0.009506 -0.000503" />
+      <mass value="0.0794462"/>
+      <inertia ixx="0.12079175"  ixy="-0.00079781067"  ixz="-0.00039322246" iyx="-0.00079781067" iyy="0.10885465" iyz="0.0070770117" izx="-0.00039322246" izy="0.0070770117" izz="0.041871103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+            <sphere radius="0.01"/>
+       </geometry>
+       <material name="blue">
+            <color rgba="0 0 1 1"/>
+       </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--link pe esquerdo-->
+  <link name="foot_r" >
+    <inertial>
+      <origin xyz="-0.000214 -0.018536 0.013873" />
+      <mass value="0.16710792"/>
+      <inertia ixx="0.12079175"  ixy="-0.00079781067"  ixz="-0.00039322246" iyx="-0.00079781067" iyy="0.10885465" iyz="0.0070770117" izx="-0.00039322246" izy="0.0070770117" izz="0.041871103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.045 0.08175"/>        
+      </geometry>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.045 0.08175"/>  
+      </geometry>
+    </collision>
+  </link> 
+
+  <!--Juntas-->
+  <joint name="base_link_to_body" type="fixed">
+    <parent link="base_link"/>
+    <child link="pelvis"/>
+  </joint>
+  <joint name="j_front_hip_l" type="revolute">
+    <parent link="pelvis"/>
+    <child link="front_hip_l"/>
+    <origin xyz="-0.005 0.037 -0.025" rpy="1.5707963 3.14159 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_sagittal_hip_l" type="revolute">
+    <parent link="front_hip_l"/>
+    <child link="sagittal_hip_l"/>
+    <origin xyz="0 0 0" rpy="1.5707963 0 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="joint_fixed_thigh_l" type="fixed">
+    <parent link="sagittal_hip_l"/>
+    <child link="thigh_l"/>
+    <origin xyz="-0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_knee_l" type="revolute">
+    <parent link="thigh_l"/>
+    <child link="knee_l"/>
+    <origin xyz="-0.04 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+   <joint name="joint_fixed_knee_l" type="fixed">
+    <parent link="knee_l"/>
+    <child link="tibia_l"/>
+    <origin xyz="-0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_sagittal_ankle_l" type="revolute">
+    <parent link="tibia_l"/>
+    <child link="sagittal_ankle_l"/>
+    <origin xyz="-0.05 0 0" rpy="3.14159 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_front_ankle_l" type="revolute">
+    <parent link="sagittal_ankle_l"/>
+    <child link="front_ankle_l"/>
+    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="joint_foot_l" type="fixed">
+    <parent link="front_ankle_l"/>
+    <child link="foot_l"/>
+    <origin xyz="-0.01 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_front_hip_r" type="revolute">
+    <parent link="pelvis"/>
+    <child link="front_hip_r"/>
+    <origin xyz="-0.005 -0.037 -0.025" rpy="-1.5707963 3.14159 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_sagittal_hip_r" type="revolute">
+    <parent link="front_hip_r"/>
+    <child link="sagittal_hip_r"/>
+    <origin xyz="0 0 0" rpy="1.5707963 0 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+   <joint name="joint_fixed_pelvis_thigh_r" type="fixed">
+    <parent link="sagittal_hip_r"/>
+    <child link="thigh_r"/>
+    <origin xyz="0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_knee_r" type="revolute">
+    <parent link="thigh_r"/>
+    <child link="knee_r"/>
+    <origin xyz="0.04 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+   <joint name="joint_fixed_knee_r" type="fixed">
+    <parent link="knee_r"/>
+    <child link="tibia_r"/>
+    <origin xyz="0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_sagittal_ankle_r" type="revolute">
+    <parent link="tibia_r"/>
+    <child link="sagittal_ankle_r"/>
+    <origin xyz="0.05 0 0" rpy="3.14159 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_front_ankle_r" type="revolute">
+    <parent link="sagittal_ankle_r"/>
+    <child link="front_ankle_r"/>
+    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint> 
+  <joint name="joint_foot_r" type="fixed">
+    <parent link="front_ankle_r"/>
+    <child link="foot_r"/>
+    <origin xyz="0.01 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!--Configuracao das transmissoes e atuadores de cada junta-->
+  <!--Atuador da junta do quadril frontal esquerdo-->
+  <transmission name="t_j_front_hip_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_hip_l">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_hip_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>  
+  <!--Atuador da junta do quadril sagital esquerdo-->
+  <transmission name="t_j_sagittal_hip_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_hip_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_hip_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do joelho esquerdo-->  
+  <transmission name="t_j_knee_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_knee_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_knee_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo sagital esquerdo-->
+  <transmission name="t_j_sagittal_ankle_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_ankle_l">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_ankle_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo frontal esquerdo-->  
+  <transmission name="t_j_front_ankle_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_ankle_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_ankle_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do quadril frontal direito--> 
+  <transmission name="t_j_front_hip_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do quadril sagital direito--> 
+  <transmission name="t_j_sagittal_hip_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do joelho direito--> 
+  <transmission name="t_j_knee_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_knee_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_knee_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo sagital direito-->
+  <transmission name="t_j_sagittal_ankle_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo frontal direito-->  
+   <transmission name="t_j_front_ankle_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Configuracao de plugins e cores para o Gazebo-->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/biprob</robotNamespace>
+    </plugin>
+  </gazebo>
+  <gazebo reference="pelvis">    
+    <material>Gazebo/Grey</material>    
+  </gazebo>
+  <gazebo reference="front_hip_l">   
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="sagittal_hip_l">   
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="thigh_l">     
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="knee_l">    
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="tibia_l">      
+    <material>Gazebo/Orange</material>      
+  </gazebo>
+  <gazebo reference="sagittal_ankle_l">      
+    <material>Gazebo/Blue</material>      
+  </gazebo>
+  <gazebo reference="front_ankle_l">      
+    <material>Gazebo/Blue</material>
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>    
+  </gazebo>
+  <gazebo reference="foot_l">    
+    <material>Gazebo/Grey</material>    
+  </gazebo>
+  <gazebo reference="front_hip_r">      
+    <material>Gazebo/Blue</material>      
+  </gazebo>
+  <gazebo reference="sagittal_hip_r">   
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="thigh_r">    
+    <material>Gazebo/Orange</material>    
+  </gazebo>
+  <gazebo reference="knee_r">    
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="tibia_r">    
+    <material>Gazebo/Orange</material>    
+  </gazebo>
+  <gazebo reference="sagittal_ankle_r">    
+    <material>Gazebo/Blue</material>    
+  </gazebo>
+  <gazebo reference="front_ankle_r">    
+    <material>Gazebo/Blue</material>
+    <mu1>9000</mu1>
+    <mu2>9000</mu2>
+    <kp>1000000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxContacts>1</maxContacts>    
+  </gazebo>
+  <gazebo reference="foot_r">    
+    <material>Gazebo/Grey</material>    
+  </gazebo>
+  <gazebo>
+    <plugin filename="libhector_gazebo_ros_imu.so" name="gazebo_ros_imu">
+    <bodyName>pelvis</bodyName>
+    <updateRate>50</updateRate>
+    <serviceName>/biprob/imu_service</serviceName>
+    <topicName>/biprob/imu</topicName>
+    <gaussianNoise>0</gaussianNoise>
+    <xyzOffset>0 0 0</xyzOffset>
+    <rpyOffset>0 0 -0.703220730592</rpyOffset>
+    </plugin>     
+  </gazebo> 
+</robot>

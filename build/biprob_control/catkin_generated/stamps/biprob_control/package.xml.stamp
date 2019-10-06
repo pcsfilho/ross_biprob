@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>biprob_control</name>
+  <version>1.0.0</version>
+  <description>The biprob_control package</description>
+
+  <maintainer email="paulo.ecomp@gmail.com">Paulo Filho</maintainer>
+
+  <license>BSD</license>
+
+  
+
+  <author email="paulo.ecomp@gmail.com">Paulo Filho</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>biprob_description</run_depend>
+<!--  <run_depend>gazebo_ros</run_depend> -->
+
+
+</package>

@@ -1,0 +1,2 @@
+biprob_control:biprob_description:biprob_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/paulo/ros_biprob/devel -DCMAKE_INSTALL_PREFIX=/home/paulo/ros_biprob/install

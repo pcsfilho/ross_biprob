@@ -1,0 +1,8 @@
+prefix=/home/paulo/ros_biprob/devel
+
+Name: biprob_gazebo
+Description: Description of biprob_gazebo
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/paulo/ros_biprob/devel/lib 
+Requires: sensor_msgs gazebo_ros hector_gazebo_plugins

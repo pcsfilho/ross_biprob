@@ -1,0 +1,12 @@
+$ export LIBGL_ALWAYS_SOFTWARE=1
+$ source /opt/ros/hydro/setup.bash
+$ source ~/ros_biprob/devel/setup.bash
+$ roslaunch biprob_gazebo biprob_gazebo.launch
+$ roslaunch biprob_control biprob_rqt.launch
+$ roslaunch urdf_tutorial display.launch model:=biprob.urdf
+$  rosrun biprob_gazebo walker_demo.py
+$ rosrun biprob_gazebo demo_step_response.py
+$ 
+
+
+

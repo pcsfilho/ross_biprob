@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<robot>
+  <!--Configuração das transmissões e atuadores de cada junta-->
+  <!--Atuador da junta do quadril frontal esquerdo-->
+  <transmission name="t_j_front_hip_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_hip_l">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_hip_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>  
+  <!--Atuador da junta do quadril sagital esquerdo-->
+  <transmission name="t_j_sagittal_hip_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_hip_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_hip_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do joelho esquerdo-->  
+  <transmission name="t_j_knee_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_knee_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_knee_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo sagital esquerdo-->
+  <transmission name="t_j_sagittal_ankle_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_ankle_l">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_ankle_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo frontal esquerdo-->  
+  <transmission name="t_j_front_ankle_l">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_ankle_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_ankle_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do quadril frontal direito--> 
+  <transmission name="t_j_front_hip_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do quadril sagital direito--> 
+  <transmission name="t_j_sagittal_hip_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do joelho direito--> 
+  <transmission name="t_j_knee_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_knee_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_knee_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo sagital direito-->
+  <transmission name="t_j_sagittal_ankle_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_sagittal_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_sagittal_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--Atuador da junta do tornozelo frontal direito-->  
+   <transmission name="t_j_front_ankle_r">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_front_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_j_front_ankle_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>

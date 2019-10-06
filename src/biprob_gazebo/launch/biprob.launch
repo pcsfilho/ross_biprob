@@ -1,0 +1,16 @@
+<launch>
+   <param name="robot_description" textfile="$(find biprob_description)/urdf/biprob.urdf" />  
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="worlds/empty.world"/>
+    <arg name="paused" value="true"/>
+    
+  </include>
+  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find biprob_description)/urdf/biprob.urdf -urdf -model biprob -z 0.25" />
+
+
+  <include file="$(find biprob_control)/launch/biprob_control.launch"/>
+
+  <node name="biprob_walker" pkg="biprob_gazebo" type="walker.py"/>
+</launch>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot>
+   <!--Juntas-->
+  <joint name="base_link_to_body" type="fixed">
+    <parent link="base_link"/>
+    <child link="pelvis"/>
+  </joint>
+  <joint name="j_front_hip_l" type="revolute">
+    <parent link="pelvis"/>
+    <child link="front_hip_l"/>
+    <origin xyz="-0.005 0.037 -0.025" rpy="1.5707963 3.14159 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_sagittal_hip_l" type="revolute">
+    <parent link="front_hip_l"/>
+    <child link="sagittal_hip_l"/>
+    <origin xyz="0 0 0" rpy="1.5707963 0 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="joint_fixed_thigh_l" type="fixed">
+    <parent link="sagittal_hip_l"/>
+    <child link="thigh_l"/>
+    <origin xyz="-0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_knee_l" type="revolute">
+    <parent link="thigh_l"/>
+    <child link="knee_l"/>
+    <origin xyz="-0.04 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+   <joint name="joint_fixed_knee_l" type="fixed">
+    <parent link="knee_l"/>
+    <child link="tibia_l"/>
+    <origin xyz="-0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_sagittal_ankle_l" type="revolute">
+    <parent link="tibia_l"/>
+    <child link="sagittal_ankle_l"/>
+    <origin xyz="-0.06 0 0" rpy="3.14159 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_front_ankle_l" type="revolute">
+    <parent link="sagittal_ankle_l"/>
+    <child link="front_ankle_l"/>
+    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_front_hip_r" type="revolute">
+    <parent link="pelvis"/>
+    <child link="front_hip_r"/>
+    <origin xyz="-0.005 -0.037 -0.025" rpy="-1.5707963 3.14159 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_sagittal_hip_r" type="revolute">
+    <parent link="front_hip_r"/>
+    <child link="sagittal_hip_r"/>
+    <origin xyz="0 0 0" rpy="1.5707963 0 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+   <joint name="joint_fixed_pelvis_thigh_r" type="fixed">
+    <parent link="sagittal_hip_r"/>
+    <child link="thigh_r"/>
+    <origin xyz="0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_knee_r" type="revolute">
+    <parent link="thigh_r"/>
+    <child link="knee_r"/>
+    <origin xyz="0.04 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+   <joint name="joint_fixed_knee_r" type="fixed">
+    <parent link="knee_r"/>
+    <child link="tibia_r"/>
+    <origin xyz="0.05 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="j_sagittal_ankle_r" type="revolute">
+    <parent link="tibia_r"/>
+    <child link="sagittal_ankle_r"/>
+    <origin xyz="0.06 0 0" rpy="3.14159 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>
+  <joint name="j_front_ankle_r" type="revolute">
+    <parent link="sagittal_ankle_r"/>
+    <child link="front_ankle_r"/>
+    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+  </joint>  
+</robot>

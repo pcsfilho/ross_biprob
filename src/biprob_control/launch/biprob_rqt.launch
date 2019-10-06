@@ -1,0 +1,5 @@
+<launch>
+  <!-- Load RQT with a pre-setup GUI for Biprob controls from a perspective file  -->
+  <node name="biprob_rqt" pkg="rqt_gui" type="rqt_gui" respawn="false"
+	output="screen" args="--perspective-file $(find biprob_control)/launch/biprob_perspectives.perspective"/>  
+</launch>

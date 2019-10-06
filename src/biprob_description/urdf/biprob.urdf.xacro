@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="biprob" xmlns:xacro="http://www.ros.org/wiki/xacro">  
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find biprob_description)/urdf/biprob.gazebo" /> 
+  <xacro:include filename="$(find biprob_description)/urdf/biprob.transmission"/>
+  <xacro:include filename="$(find biprob_description)/urdf/biprob.joint"/> 
+  <xacro:include filename="$(find biprob_description)/urdf/biprob.urdf"/>
+</robot>

@@ -1,0 +1,6 @@
+set(biprob_gazebo_SETUP_PY_VERSION "0.1.0")
+set(biprob_gazebo_SETUP_PY_SCRIPTS "")
+set(biprob_gazebo_SETUP_PY_PACKAGES "biprob_gazebo")
+set(biprob_gazebo_SETUP_PY_PACKAGE_DIRS "src/biprob_gazebo")
+set(biprob_gazebo_SETUP_PY_MODULES "")
+set(biprob_gazebo_SETUP_PY_MODULE_DIRS "")

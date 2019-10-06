@@ -1,0 +1,11 @@
+<launch>
+  <rosparam file="$(find biprob_control)/config/biprob_control.yaml" command="load"/>
+  <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/biprob" args="j_front_hip_l_position_controller j_sagittal_hip_l_position_controller j_knee_l_position_controller j_sagittal_ankle_l_position_controller j_front_ankle_l_position_controller j_front_hip_r_position_controller j_sagittal_hip_r_position_controller j_knee_r_position_controller j_sagittal_ankle_r_position_controller j_front_ankle_r_position_controller joint_state_controller"/>
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/biprob/joint_states"/>
+  </node>
+</launch>
